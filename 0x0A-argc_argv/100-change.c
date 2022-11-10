@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 	while (coins[position] != '\0')
 	{
-		if (total >= cons[position])
+		if (total >= coins[position])
 		{
 			aux = (total / coins[position]);
 			change += aux;
