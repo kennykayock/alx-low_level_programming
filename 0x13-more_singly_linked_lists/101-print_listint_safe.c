@@ -14,7 +14,6 @@ size_t print_listint_safe(const listint_t *head);
 size_t looped_listint_len(const listint_t *head)
 {
 	const listint_t *tortoise, *hare;
-
 	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
@@ -31,7 +30,9 @@ size_t looped_listint_len(const listint_t *head)
 			while (tortoise != hare)
 			{
 				nodes++;
+
 				tortoise = tortoise->next;
+
 				hare = hare->next;
 			}
 
@@ -39,6 +40,7 @@ size_t looped_listint_len(const listint_t *head)
 			while (tortoise != hare)
 			{
 				nodes++;
+
 				tortoise = tortoise->next;
 			}
 
@@ -58,8 +60,8 @@ size_t looped_listint_len(const listint_t *head)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t nodes;
-	index = 0;
+	size_t nodes, index = 0;
+
 	nodes = looped_listint_len(head);
 
 	if (nodes == 0)
@@ -80,5 +82,6 @@ size_t print_listint_safe(const listint_t *head)
 
 		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
+
 	return (nodes);
 }
