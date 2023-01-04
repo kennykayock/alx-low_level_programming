@@ -10,18 +10,21 @@
  */
 int main(int argc, char *argv[])
 {
-	int a, b;
+	int i, j;
 
-	if (argc == 3)
-	{
-		a = atoi(argv[1]);
-		b = atoid(argv[2]);
-		printf("%d\n", a * b);
-		return (0);
-	}
-	else
+	if (argc == 1 || argc == 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	else
+	{
+		j = 1;
+		for (i = 1; i < 3; i++)
+			j *= atoi(argv[i]);
+
+		printf("%d\n", j);
+	}
+
+	return (0);
 }
